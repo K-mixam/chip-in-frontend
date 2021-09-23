@@ -1,7 +1,8 @@
 import { makeAutoObservable } from "mobx";
+import { IRoom } from "../types/room";
 
 class Room {
-  rooms = [
+  rooms: IRoom[] = [
     {
       id: 0,
       title: "Пятница развратница",
@@ -9,7 +10,6 @@ class Room {
       people_number: 12,
       owner: 123,
       amount: 0,
-      is_categorized: false,
     },
     {
       id: 1,
@@ -18,7 +18,6 @@ class Room {
       people_number: 3,
       owner: 1,
       amount: 10000,
-      is_categorized: false,
     },
     {
       id: 2,
@@ -27,11 +26,21 @@ class Room {
       people_number: 3,
       owner: 1,
       amount: -100,
-      is_categorized: false,
     },
   ];
   constructor() {
     makeAutoObservable(this);
+  }
+
+  create(room: IRoom) {
+    this.rooms.push(room);
+  }
+
+  edit(room_id: number, title: string) {
+    const foundRoom = this.rooms.find((room) => room.id === room_id);
+    if (foundRoom) {
+      foundRoom.title = title;
+    }
   }
 }
 
