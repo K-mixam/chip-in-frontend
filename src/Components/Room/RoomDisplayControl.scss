@@ -1,0 +1,9 @@
+.room-display-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 11px;
+  @media (max-width: 420px) {
+    padding: 0 13px;
+  }
+}

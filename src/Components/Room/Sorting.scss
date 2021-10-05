@@ -1,0 +1,34 @@
+.sort-form {
+  margin-bottom: 7px;
+  margin-left: 5%;
+  color: #a4a4a4;
+  display: flex;
+  align-items: center;
+
+  &_box {
+    appearance: none;
+    position: absolute;
+    &:checked + .sort-form_text::before {
+      background-color: #a4a4a4;
+    }
+  }
+
+  &_text {
+    position: relative;
+    padding-left: 22px;
+    font-size: 14px;
+    line-height: 17px;
+    &:before {
+      content: "";
+      display: block;
+      width: 13px;
+      height: 13px;
+      border: 1px solid #a4a4a4;
+      border-radius: 2px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+}

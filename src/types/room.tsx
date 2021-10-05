@@ -1,8 +1,8 @@
 export interface IRoom {
   id: number;
   title: string;
-  date: number;
+  date: string;
   people_number: number;
   owner: number;
-  amount: number;
+  amount: string;
 }

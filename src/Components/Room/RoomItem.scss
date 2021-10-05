@@ -1,0 +1,41 @@
+.room {
+  margin-bottom: 13px;
+  background-color: #1d1d1d;
+  border-radius: 20px;
+  padding: 8px 12px;
+  &__name {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  &__subtitle {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__description {
+    font-size: 14px;
+    margin-top: 6px;
+
+    &-data {
+      margin-bottom: 9px;
+      color: #a4a4a4;
+    }
+    &-owner {
+      color: #1d57eb;
+    }
+  }
+  &__amount {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    align-self: flex-end;
+
+    &_red {
+      color: #d4204b;
+    }
+    &_green {
+      color: #00b83e;
+    }
+  }
+}

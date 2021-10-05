@@ -1,0 +1,33 @@
+.header {
+  background: #1d1d1d;
+  display: flex;
+  justify-content: space-between;
+  height: 78px;
+  align-items: center;
+  &__log-icon {
+    margin-top: 26px;
+    margin-bottom: 22px;
+    margin-left: 5%;
+  }
+  &__acc-icon {
+    margin-top: 26px;
+    margin-bottom: 22px;
+    margin-right: 5%;
+  }
+  &__item {
+    margin-top: 26px;
+    margin-bottom: 22px;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+
+    &_red {
+      color: #d4204b;
+    }
+
+    &_green {
+      color: #00b83e;
+    }
+  }
+}
