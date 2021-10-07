@@ -8,6 +8,9 @@
     font-size: 20px;
     font-weight: bold;
     color: #ffffff;
+    &-tick {
+      padding-left: 10px;
+    }
   }
   &__subtitle {
     display: flex;
@@ -32,9 +35,11 @@
     align-self: flex-end;
 
     &_red {
+      @extend .room__amount;
       color: #d4204b;
     }
     &_green {
+      @extend .room__amount;
       color: #00b83e;
     }
   }

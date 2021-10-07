@@ -23,10 +23,12 @@
     display: flex;
 
     &_red {
+      @extend .header__item;
       color: #d4204b;
     }
 
     &_green {
+      @extend .header__item;
       color: #00b83e;
     }
   }

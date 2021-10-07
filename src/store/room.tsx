@@ -2,46 +2,47 @@ import { makeAutoObservable } from "mobx";
 import { IRoom } from "../types/room";
 
 class Room {
+  is_filtered_owner = false;
   rooms: IRoom[] = [
     {
       id: 0,
       title: "Майские праздники",
-      date: "2 мая",
+      date: 1619948098000,
       people_number: 7,
-      owner: 1,
-      amount: "532p",
+      owner: 2,
+      amount: 532,
     },
     {
       id: 1,
       title: "День рождения Андрея",
-      date: "27 апреля",
+      date: 1619516098000,
       people_number: 16,
       owner: 1,
-      amount: "271p",
+      amount: -271,
     },
     {
       id: 2,
       title: "Выпускной",
-      date: "1 июня",
+      date: 1622540098000,
       people_number: 25,
-      owner: 1,
-      amount: "1532p",
+      owner: 2,
+      amount: 1532,
     },
     {
       id: 3,
       title: "Новый год",
-      date: "1 января",
+      date: 1599493698000,
       people_number: 11,
-      owner: 1,
-      amount: "0",
+      owner: 2,
+      amount: 0,
     },
     {
       id: 4,
       title: "Поступление",
-      date: "2 сентября",
+      date: 1630575298000,
       people_number: 19,
       owner: 1,
-      amount: "0",
+      amount: 0,
     },
   ];
   constructor() {
@@ -57,6 +58,10 @@ class Room {
     if (foundRoom) {
       foundRoom.title = title;
     }
+  }
+
+  toggleFilter() {
+    this.is_filtered_owner = !this.is_filtered_owner;
   }
 }
 
