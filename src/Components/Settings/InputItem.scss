@@ -1,0 +1,27 @@
+.input-settings-title {
+  margin-left: 26px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.input-settings-input {
+  border: 0;
+  border-radius: 20px;
+  width: 90%;
+  margin-left: 15px;
+  margin-top: 7px;
+  background: #34373c;
+  font-size: 20px;
+  font-weight: 400;
+  color: #dcddde;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  &__removable {
+    width: 82%;
+  }
+}
+
+.input-settings-item {
+  margin-bottom: 21px;
+}
