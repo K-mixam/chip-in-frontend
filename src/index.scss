@@ -14,6 +14,21 @@
     url(assets/fonts/Proxima-Nova-Bold.otf) format("truetype");
 }
 
+@font-face {
+  font-family: "Golos";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Golos"),
+    url(assets/fonts/GolosText-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Golos";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Golos"), url(assets/fonts/GolosText-Medium.ttf) format("truetype");
+}
+
 * {
   font-family: "Proxima Nova";
 }

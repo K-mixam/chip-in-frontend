@@ -1,5 +1,4 @@
-export enum ICurrentPanel {
+export enum CurrentPanelEnum {
   home = "home",
-  settings = "settings",
   room = "room",
 }

@@ -1,8 +1,8 @@
 import { makeAutoObservable } from "mobx";
-import { ICurrentPanel } from "../types/app";
+import { CurrentPanelEnum } from "../types/app";
 
 class App {
-  currentPanel = ICurrentPanel.home;
+  currentPanel = CurrentPanelEnum.room;
 
   constructor() {
     makeAutoObservable(this);

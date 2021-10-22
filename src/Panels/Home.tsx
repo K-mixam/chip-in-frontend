@@ -4,30 +4,30 @@ import RoomList from "../Components/Room/RoomList";
 import Header from "../Components/Generic/Header";
 import "./Home.scss";
 import "../Components/Generic/Header.scss";
-import app_logo from "../assets/img/logo.png";
-import account_avatar from "../assets/img/login.png";
-import BigRedButton from "../Components/Generic/BigRedButton";
+import SingleButton from "../Components/Generic/SingleButton";
+import { AppLogoIcon, DefaultUserAvatar } from "../assets/svg";
 import RoomFilter from "../Components/Room/RoomFilter";
+import Content from "../Components/Generic/Content";
 
 const Home: FC = () => {
   return (
     <div className="panel">
       <Header>
         <div className="header__log-icon">
-          <img src={app_logo} alt="" width="35px"></img>
+          <AppLogoIcon />
         </div>
-        <div className="header__item_red">1793p</div>
+        <div className="header__title_red">1793p</div>
         <div className="header__acc-icon">
-          <img src={account_avatar} alt="" width="45px"></img>
+          <DefaultUserAvatar />
         </div>
       </Header>
-      <div className="content">
+      <Content>
         <Container>
           <RoomFilter />
           <RoomList />
         </Container>
-      </div>
-      <BigRedButton />
+      </Content>
+      <SingleButton name="Создать комнату" />
     </div>
   );
 };

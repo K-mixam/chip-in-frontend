@@ -6,3 +6,8 @@ export interface IRoom {
   owner: number;
   amount: number;
 }
+
+export enum RoomTabEnum {
+  setting = "setting",
+  product_list = "product_list",
+}
