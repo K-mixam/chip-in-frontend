@@ -1,15 +1,15 @@
-.input-settings-title {
-  margin-left: 26px;
+.long-input-title {
+  margin-left: 15px;
   font-size: 20px;
   font-weight: 700;
   color: #ffffff;
 }
 
-.input-settings-input {
+.long-input {
+  box-sizing: border-box;
   border: 0;
   border-radius: 20px;
-  width: 90%;
-  margin-left: 15px;
+  width: 100%;
   margin-top: 7px;
   background: #34373c;
   font-size: 20px;
@@ -17,11 +17,10 @@
   color: #dcddde;
   padding-top: 8px;
   padding-bottom: 8px;
-  &__removable {
-    width: 82%;
-  }
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.input-settings-item {
+.long-input-item {
   margin-bottom: 21px;
 }

@@ -1,0 +1,25 @@
+.products {
+  &__item {
+    border-bottom: 1px solid rgba($color: #161616, $alpha: 0.4);
+    &__name {
+      margin-top: 8px;
+      margin-left: 12px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      font-family: "Golos";
+    }
+    &__description {
+      margin-left: 20px;
+      margin-top: 6px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      line-height: 19px;
+      font-family: "Golos";
+    }
+  }
+}
+
+.operation {
+  color: #d4204b;
+}

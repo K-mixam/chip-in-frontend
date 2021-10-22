@@ -1,0 +1,31 @@
+.switch-button {
+  height: 26px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 26px;
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  font-size: 12px;
+  box-shadow: (0px -1px 4px rgba(0, 0, 0, 0.18));
+  :first-child,
+  :last-child {
+    border: 0;
+    background: #1d1d1d;
+    color: #a4a4a4;
+    box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  :first-child {
+    border-radius: 0px 0px 0px 20px;
+  }
+  :last-child {
+    border-radius: 0px 0px 20px 0px;
+  }
+  &__item {
+    &_selected {
+      @extend .switch-button__item;
+      color: #ffffff !important;
+      background: #d4204b !important;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.category {
+  margin-bottom: 25px;
+  background-color: #1d1d1d;
+  border-radius: 20px;
+  color: #ffffff;
+  &__title {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba($color: #161616, $alpha: 0.4);
+  }
+  &__final-amount {
+    font-family: "Golos";
+    border-bottom: 1px solid rgba($color: #161616, $alpha: 0.4);
+    margin-top: 7px;
+    margin-bottom: 9px;
+    margin-right: 13px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 19px;
+    line-height: 23px;
+  }
+}

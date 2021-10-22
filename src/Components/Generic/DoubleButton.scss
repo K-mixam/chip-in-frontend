@@ -1,0 +1,27 @@
+.double-button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 32% 68%;
+  height: 65px;
+  min-height: 65px;
+  max-height: 65px;
+
+  &__item {
+    appearance: none;
+    border: 0;
+    background: #d4204b;
+    font-family: "Proxima Nova";
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+    &_shadow {
+      @extend .double-button__item;
+      background: rgb(188, 29, 67);
+      background: linear-gradient(
+        90deg,
+        rgba(188, 29, 67, 1) 0%,
+        rgba(212, 32, 75, 1) 4%
+      );
+    }
+  }
+}

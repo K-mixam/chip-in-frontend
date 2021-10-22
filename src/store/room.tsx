@@ -1,8 +1,9 @@
 import { makeAutoObservable } from "mobx";
-import { IRoom } from "../types/room";
+import { IRoom, RoomTabEnum } from "../types/room";
 
 class Room {
   is_filtered_owner = false;
+  currentRoomTab = RoomTabEnum.setting;
   rooms: IRoom[] = [
     {
       id: 0,
@@ -62,6 +63,10 @@ class Room {
 
   toggleFilter() {
     this.is_filtered_owner = !this.is_filtered_owner;
+  }
+
+  setCurrentRoomTab(roomTab: RoomTabEnum) {
+    this.currentRoomTab = roomTab;
   }
 }
 
