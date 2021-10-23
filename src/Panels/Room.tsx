@@ -7,6 +7,7 @@ import RoomSetting from "../Components/Room/RoomSetting";
 import store from "../store";
 import { RoomTabEnum } from "../types/room";
 
+
 const Room = observer(() => {
   const currentRoomTab = store.room.currentRoomTab;
 
@@ -28,6 +29,7 @@ const Room = observer(() => {
       </Header>
       <RoomTab firstTabName="Настройки" secondTabName="Товары" />
       {getCurrentTabComponent()}
+      
     </div>
   );
 });
