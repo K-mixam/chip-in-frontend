@@ -1,7 +1,6 @@
 import Container from "../Generic/Container";
 import Content from "../Generic/Content";
-import LongInput from "../Generic/LongInput";
-import ShortInput from "../Generic/ShortInput";
+import MyInput from "../Generic/MyInput";
 import SingleButton from "../Generic/SingleButton";
 import "./RoomSetting.scss";
 
@@ -10,9 +9,9 @@ const RoomSetting = () => {
     <div className="panel">
       <Content>
         <Container>
-            <LongInput title="Название комнаты"/>
-            <LongInput title="Счёт для сбора"/>
-            <ShortInput title="Категории"/>
+            <MyInput title="Название комнаты" inputType="longInput"/>
+            <MyInput title="Счёт для сбора" inputType="longInput"/>
+            <MyInput title="Категории" inputType="longInput"/>
             <button className="text-button">Добавить категорию</button>
         </Container>
       </Content>

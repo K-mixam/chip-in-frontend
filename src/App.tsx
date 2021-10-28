@@ -5,6 +5,7 @@ import Home from "./Panels/Home";
 import store from "./store";
 import { CurrentPanelEnum } from "./types/app";
 import Room from "./Panels/Room";
+import ProductSetup from "./Panels/ProductSetup";
 
 const App: FC = () => {
   const app = store.app.currentPanel;
@@ -15,6 +16,9 @@ const App: FC = () => {
         return <Home />;
       case CurrentPanelEnum.room:
         return <Room />;
+      // case CurrentPanelEnum.productSetup:
+      //   return <ProductSetup/>;
+      // Хз почему, но когда добавляю этот блок (сверху), слетает верстка
     }
   };
 
