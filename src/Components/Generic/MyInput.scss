@@ -1,4 +1,4 @@
-.short-input {
+.category-input {
   box-sizing: border-box;
   border: 0;
   border-radius: 20px;
@@ -16,21 +16,21 @@
   padding-right: 15px;
 }
 
-.short-input-title {
+.category-input-title {
   margin-left: 15px;
   font-size: 20px;
   font-weight: 700;
   color: #ffffff;
 }
 
-.long-input-title {
+.input-title {
   margin-left: 15px;
   font-size: 20px;
   font-weight: 700;
   color: #ffffff;
 }
 
-.long-input {
+.input {
   box-sizing: border-box;
   border: 0;
   border-radius: 20px;
@@ -46,11 +46,11 @@
   padding-right: 15px;
 }
 
-.long-input-item {
+.input-item {
   margin-bottom: 21px;
 }
 
-.tmp-input {
+.quantity-input {
   box-sizing: border-box;
   border: 0;
   border-radius: 20px;
@@ -68,11 +68,13 @@
   padding-right: 15px;
 }
 
-.tmp-input-item {
+.quantity-input-item {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.tmp-input-title {
+.quantity-input-title {
   margin-left: 15px;
   font-size: 20px;
   font-weight: 400;

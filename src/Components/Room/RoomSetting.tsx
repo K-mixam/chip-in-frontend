@@ -9,9 +9,9 @@ const RoomSetting = () => {
     <div className="panel">
       <Content>
         <Container>
-            <MyInput title="Название комнаты" inputType="longInput"/>
-            <MyInput title="Счёт для сбора" inputType="longInput"/>
-            <MyInput title="Категории" inputType="shortInput"/>
+            <MyInput title="Название комнаты" inputType="Input"/>
+            <MyInput title="Счёт для сбора" inputType="Input"/>
+            <MyInput title="Категории" inputType="categoryInput"/>
             <button className="text-button">Добавить категорию</button>
         </Container>
       </Content>

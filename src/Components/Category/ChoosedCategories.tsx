@@ -8,7 +8,7 @@ const ChoosedCategories:FC = () => {
                 Категория
             </span>
             <div>
-                <button className="category-button selected">Еда</button>
+                <button className="category-button category-button__selected">Еда</button>
                 <button className="category-button">Напитки</button>
                 <button className="category-button">Развлечения</button>
             </div>

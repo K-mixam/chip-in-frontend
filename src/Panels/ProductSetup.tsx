@@ -19,8 +19,8 @@ const ProductSetup:FC = () => {
                 <Content>
                     <Container>
                         <ChoosedCategories/>
-                        <MyInput title="Название" inputType="longInput"/>
-                        <MyInput inputType="addInput" title=""/>
+                        <MyInput title="Название" inputType="Input"/>
+                        <MyInput inputType="quantityInput" title=""/>
                     </Container>
                 </Content>
                 <SingleButton name="Добавить"/>

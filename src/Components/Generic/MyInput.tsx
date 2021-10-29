@@ -7,28 +7,28 @@ interface MyInputProps{
     inputType: string;
 }
 
-interface LongInputProps{
+interface InputProps{
     title: string;
 }
 
-interface ShortInputProps{
+interface CategoryInputProps{
     title: string;
 }
 
 const MyInput:FC<MyInputProps> = ({title, inputType}) => {
     const currentInput = () => {
         switch(inputType){
-            case "longInput":
+            case "Input":
                 return(               
-                    <LongInput title={title}/>
+                    <Input title={title}/>
                 );
-            case "shortInput":
+            case "categoryInput":
                 return(        
-                    <ShortInput title={title}/>
+                    <CategoryInput title={title}/>
                 );
-            case "addInput":
+            case "quantityInput":
                 return(
-                    <AddIput/>
+                    <QuantityInput/>
                 );
         }
     }
@@ -36,48 +36,52 @@ const MyInput:FC<MyInputProps> = ({title, inputType}) => {
     return <>{currentInput()}</>;
 };
 
-const LongInput:FC<LongInputProps> = ({title}) => {
+const Input:FC<InputProps> = ({title}) => {
     return (
-        <div className="long-input-item">
-            <label className="long-input-title">
+        <div className="input-item">
+            <label className="input-title">
                 {title}
-                <input className="long-input"></input>
+                <input className="input"></input>
             </label>                    
         </div>
     );
 };
 
-const ShortInput:FC<ShortInputProps> = ({title}) => {
+const CategoryInput:FC<CategoryInputProps> = ({title}) => {
     return (
-        <div className="short-input-item">
-            <label className="short-input-title">
+        <div>
+            <label className="category-input-title">
                 {title}
-                <input className="short-input"></input>
+                <input className="category-input"></input>
                 <DeleteCategory/>
-                <input className="short-input"></input>
+                <input className="category-input"></input>
                 <DeleteCategory/>
             </label>
         </div>
     );
 };
 
-const AddIput:FC =() => {
+const QuantityInput:FC =() => {
     return(
-        <div className="tmp-input-item">
+        <div className="quantity-input-item">
+        <div>
             <label>
-                <span className="tmp-input-title">Кол-во</span>
+                <span className="quantity-input-title">Кол-во</span>
                 <div>
-                    <input className="tmp-input"></input>
+                    <input className="quantity-input"></input>
                     <span className="text">шт.</span>
                 </div> 
             </label>
+        </div>
+        <div>
             <label>
-                <span className="tmp-input-title">Цена</span>
+                <span className="quantity-input-title">Цена</span>
                 <div>
-                    <input className="tmp-input"></input>
+                    <input className="quantity-input"></input>
                     <span className="text">₽</span>
                 </div>
             </label>
+        </div>
         </div>
     );
 };
