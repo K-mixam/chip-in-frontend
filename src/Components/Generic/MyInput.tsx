@@ -7,53 +7,79 @@ interface MyInputProps{
     inputType: string;
 }
 
-const MyInput:FC<MyInputProps> = ({title}, {inputType}) => {
+interface LongInputProps{
+    title: string;
+}
+
+interface ShortInputProps{
+    title: string;
+}
+
+const MyInput:FC<MyInputProps> = ({title, inputType}) => {
     const currentInput = () => {
         switch(inputType){
             case "longInput":
                 return(               
-                    <div className="long-input-item">
-                        <label className="long-input-title">
-                            {title}
-                            <input className="long-input"></input>
-                        </label>                    
-                    </div>                
+                    <LongInput title={title}/>
                 );
             case "shortInput":
                 return(        
-                    <div className="short-input-item">
-                        <label className="short-input-title">
-                            {title}
-                            <input className="short-input"></input>
-                            <DeleteCategory/>
-                            <input className="short-input"></input>
-                            <DeleteCategory/>
-                        </label>
-                    </div>
+                    <ShortInput title={title}/>
                 );
             case "addInput":
                 return(
-                    <div className="tmp-input-item">
-                        <label>
-                            <span className="tmp-input-title">Кол-во</span>
-                            <div>
-                                <input className="tmp-input"></input>
-                                <span className="text">шт.</span>
-                            </div> 
-                        </label>
-                        <label>
-                            <span className="tmp-input-title">Цена</span>
-                            <div>
-                                <input className="tmp-input"></input>
-                                <span className="text">₽</span>
-                            </div>
-                        </label>
-                    </div>
+                    <AddIput/>
                 );
         }
     }
 
     return <>{currentInput()}</>;
+};
+
+const LongInput:FC<LongInputProps> = ({title}) => {
+    return (
+        <div className="long-input-item">
+            <label className="long-input-title">
+                {title}
+                <input className="long-input"></input>
+            </label>                    
+        </div>
+    );
+};
+
+const ShortInput:FC<ShortInputProps> = ({title}) => {
+    return (
+        <div className="short-input-item">
+            <label className="short-input-title">
+                {title}
+                <input className="short-input"></input>
+                <DeleteCategory/>
+                <input className="short-input"></input>
+                <DeleteCategory/>
+            </label>
+        </div>
+    );
+};
+
+const AddIput:FC =() => {
+    return(
+        <div className="tmp-input-item">
+            <label>
+                <span className="tmp-input-title">Кол-во</span>
+                <div>
+                    <input className="tmp-input"></input>
+                    <span className="text">шт.</span>
+                </div> 
+            </label>
+            <label>
+                <span className="tmp-input-title">Цена</span>
+                <div>
+                    <input className="tmp-input"></input>
+                    <span className="text">₽</span>
+                </div>
+            </label>
+        </div>
+    );
 };
 
 export default MyInput;

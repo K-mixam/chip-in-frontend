@@ -11,7 +11,7 @@ const RoomSetting = () => {
         <Container>
             <MyInput title="Название комнаты" inputType="longInput"/>
             <MyInput title="Счёт для сбора" inputType="longInput"/>
-            <MyInput title="Категории" inputType="longInput"/>
+            <MyInput title="Категории" inputType="shortInput"/>
             <button className="text-button">Добавить категорию</button>
         </Container>
       </Content>

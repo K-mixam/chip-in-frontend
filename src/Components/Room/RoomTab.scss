@@ -3,7 +3,8 @@
   width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
-  height: 26px;
+  max-height: 26px;
+  min-height: 26px;
   font-family: "Proxima Nova";
   font-weight: 400;
   font-size: 12px;

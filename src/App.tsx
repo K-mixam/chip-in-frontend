@@ -16,8 +16,8 @@ const App: FC = () => {
         return <Home />;
       case CurrentPanelEnum.room:
         return <Room />;
-      // case CurrentPanelEnum.productSetup:
-      //   return <ProductSetup/>;
+      case CurrentPanelEnum.productSetup:
+        return <ProductSetup/>;
       // Хз почему, но когда добавляю этот блок (сверху), слетает верстка
     }
   };

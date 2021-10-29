@@ -8,9 +8,9 @@ const ChoosedCategories:FC = () => {
                 Категория
             </span>
             <div>
-                <button className="selected">Еда</button>
-                <button>Напитки</button>
-                <button>Развлечения</button>
+                <button className="category-button selected">Еда</button>
+                <button className="category-button">Напитки</button>
+                <button className="category-button">Развлечения</button>
             </div>
         </div>
     );
