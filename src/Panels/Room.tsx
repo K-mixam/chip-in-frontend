@@ -6,6 +6,7 @@ import RoomProducts from "../Components/Room/RoomProducts";
 import RoomSetting from "../Components/Room/RoomSetting";
 import store from "../store";
 import { RoomTabEnum } from "../types/room";
+import Panel from "../Components/Generic/Panel";
 
 
 const Room = observer(() => {
@@ -21,7 +22,7 @@ const Room = observer(() => {
   };
 
   return (
-    <div className="panel">
+    <Panel>
       <Header>
         <GoBackIcon />
         <div className="header__title_white">Новая комната</div>
@@ -30,7 +31,7 @@ const Room = observer(() => {
       <RoomTab firstTabName="Настройки" secondTabName="Товары" />
       {getCurrentTabComponent()}
       
-    </div>
+    </Panel>
   );
 });
 

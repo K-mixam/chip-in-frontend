@@ -8,10 +8,11 @@ import SingleButton from "../Components/Generic/SingleButton";
 import { AppLogoIcon, DefaultUserAvatar } from "../assets/svg";
 import RoomFilter from "../Components/Room/RoomFilter";
 import Content from "../Components/Generic/Content";
+import Panel from "../Components/Generic/Panel";
 
 const Home: FC = () => {
   return (
-    <div className="panel">
+    <Panel>
       <Header>
         <div className="header__log-icon">
           <AppLogoIcon />
@@ -28,7 +29,7 @@ const Home: FC = () => {
         </Container>
       </Content>
       <SingleButton name="Создать комнату" />
-    </div>
+    </Panel>
   );
 };
 
