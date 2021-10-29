@@ -5,14 +5,12 @@ import RoomItem from "./RoomItem";
 const RoomList = observer(() => {
   const {
     room: { rooms, is_filtered_owner },
-    user: { current_user },
+    user: { user },
   } = store;
 
   const getRoomsWithFilter = () => {
     return rooms.map((room) => {
-      return (
-        room.owner === current_user.id && <RoomItem room={room} key={room.id} />
-      );
+      return room.owner === user?.id && <RoomItem room={room} key={room.id} />;
     });
   };
 

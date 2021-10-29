@@ -1,12 +1,15 @@
+import { UserInfo } from "@vkontakte/vk-bridge";
 import { makeAutoObservable } from "mobx";
 
 class User {
-  current_user = {
-    id: 1,
-  };
+  user: UserInfo | null = null;
 
   constructor() {
     makeAutoObservable(this);
+  }
+
+  setUser(user: UserInfo) {
+    this.user = user;
   }
 }
 

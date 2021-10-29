@@ -13,7 +13,7 @@ const RoomProducts = () => {
         </Container>
       </Content>
       <TotalAmount />
-      <DoubleButton name="Готово" />
+      <DoubleButton />
     </>
   );
 };

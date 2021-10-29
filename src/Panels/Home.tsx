@@ -5,12 +5,17 @@ import Header from "../Components/Generic/Header";
 import "./Home.scss";
 import "../Components/Generic/Header.scss";
 import SingleButton from "../Components/Generic/SingleButton";
-import { AppLogoIcon, DefaultUserAvatar } from "../assets/svg";
+import { AppLogoIcon } from "../assets/svg";
 import RoomFilter from "../Components/Room/RoomFilter";
 import Content from "../Components/Generic/Content";
 import Panel from "../Components/Generic/Panel";
+import store from "../store";
+import { CurrentPanelEnum } from "../types/app";
+import { RoomTabEnum } from "../types/room";
 
 const Home: FC = () => {
+  const user = store.user.user;
+
   return (
     <Panel>
       <Header>
@@ -19,7 +24,11 @@ const Home: FC = () => {
         </div>
         <div className="header__title_red">1793p</div>
         <div className="header__acc-icon">
-          <DefaultUserAvatar />
+          <img
+            src={user?.photo_100}
+            alt="Avatar"
+            className="header__user-avatar"
+          />
         </div>
       </Header>
       <Content>
@@ -28,7 +37,13 @@ const Home: FC = () => {
           <RoomList />
         </Container>
       </Content>
-      <SingleButton name="Создать комнату" />
+      <SingleButton
+        name="Создать комнату"
+        onClick={() => {
+          store.app.setCurrentPanel(CurrentPanelEnum.room);
+          store.room.setCurrentRoomTab(RoomTabEnum.setting);
+        }}
+      />
     </Panel>
   );
 };

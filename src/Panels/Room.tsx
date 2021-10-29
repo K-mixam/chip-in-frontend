@@ -7,7 +7,7 @@ import RoomSetting from "../Components/Room/RoomSetting";
 import store from "../store";
 import { RoomTabEnum } from "../types/room";
 import Panel from "../Components/Generic/Panel";
-
+import { CurrentPanelEnum } from "../types/app";
 
 const Room = observer(() => {
   const currentRoomTab = store.room.currentRoomTab;
@@ -24,13 +24,14 @@ const Room = observer(() => {
   return (
     <Panel>
       <Header>
-        <GoBackIcon />
+        <div onClick={() => store.app.setCurrentPanel(CurrentPanelEnum.home)}>
+          <GoBackIcon />
+        </div>
         <div className="header__title_white">Новая комната</div>
         <div></div>
       </Header>
       <RoomTab firstTabName="Настройки" secondTabName="Товары" />
       {getCurrentTabComponent()}
-      
     </Panel>
   );
 });

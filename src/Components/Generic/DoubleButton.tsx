@@ -1,18 +1,19 @@
 import { FC } from "react";
 import "./DoubleButton.scss";
 import { AddIcon } from "../../assets/svg";
+import store from "../../store";
+import { CurrentPanelEnum } from "../../types/app";
 
-interface DoubleButtonProps {
-  name: string;
-}
-
-const DoubleButton: FC<DoubleButtonProps> = ({ name }) => {
+const DoubleButton: FC = () => {
   return (
     <div className="double-button">
-      <button className="double-button__item">
+      <button
+        className="double-button__item"
+        onClick={() => store.app.setCurrentPanel(CurrentPanelEnum.productSetup)}
+      >
         <AddIcon />
       </button>
-      <button className="double-button__item_shadow">{name}</button>
+      <button className="double-button__item_shadow">Готово</button>
     </div>
   );
 };

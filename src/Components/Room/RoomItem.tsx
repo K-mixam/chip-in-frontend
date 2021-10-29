@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { TickIcon } from "../../assets/svg";
 import store from "../../store";
-import { IRoom } from "../../types/room";
+import { CurrentPanelEnum } from "../../types/app";
+import { IRoom, RoomTabEnum } from "../../types/room";
 import "./RoomItem.scss";
 
 interface RoomItemProps {
@@ -9,7 +10,7 @@ interface RoomItemProps {
 }
 
 const RoomItem: FC<RoomItemProps> = ({ room }) => {
-  const current_user = store.user.current_user.id;
+  const current_user = store.user.user?.id;
 
   const GetPeopleNumber = (people_number: number) => {
     return people_number % 10 < 5 &&
@@ -34,7 +35,13 @@ const RoomItem: FC<RoomItemProps> = ({ room }) => {
   };
 
   return (
-    <div className="room">
+    <div
+      className="room"
+      onClick={() => {
+        store.app.setCurrentPanel(CurrentPanelEnum.room);
+        store.room.setCurrentRoomTab(RoomTabEnum.product_list);
+      }}
+    >
       <div className="room__name">
         <span className="room__name-text">{room.title}</span>
         {!room.amount && (

@@ -7,7 +7,9 @@ const CategoryList = () => {
   return (
     <div className="categories">
       {categories.map((category) => {
-        return <CategoryItem category={category} key={category.id} />;
+        return category.products.length ? (
+          <CategoryItem category={category} key={category.id} />
+        ) : null;
       })}
     </div>
   );
