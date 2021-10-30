@@ -23,6 +23,7 @@
   padding-right: 15px;
 
   &__selected {
+    @extend .category-button;
     background: #d4204b;
   }
 }

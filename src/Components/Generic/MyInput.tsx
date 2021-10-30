@@ -8,12 +8,20 @@ interface InputProps {
   name?: string;
   value?: string;
   changeHandler?: (event: ChangeEvent<HTMLInputElement>) => void;
+  fontWeight?: "bold" | "normal";
 }
 
 interface CategoryInputProps {
   title: string;
-  categoryValues: string[];
-  setCategoryValues: Dispatch<SetStateAction<string[]>>;
+  categoryValues: {
+    name: string;
+    value: string;
+  }[];
+  actions: {
+    addField: (name: string, value?: string | undefined) => void;
+    editField: (name: string, value: string) => void;
+    deleteField: (name: string) => void;
+  };
 }
 
 interface TextareaProps {
@@ -22,22 +30,29 @@ interface TextareaProps {
   labelText: string;
 }
 
+interface QuantityInputProps {
+  first: { value: string };
+  second: { value: string };
+  changeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
 export const Input: FC<InputProps> = ({
   title,
   name,
   value,
   changeHandler,
+  fontWeight = "bold",
 }) => {
   return (
     <div className="input-item">
-      <label className="input-title">
+      <label className={fontWeight === "bold" ? "input-title" : "title"}>
         {title}
         <input
           className="input"
           name={name}
           value={value}
           onChange={changeHandler}
-        ></input>
+        />
       </label>
     </div>
   );
@@ -46,35 +61,48 @@ export const Input: FC<InputProps> = ({
 export const CategoryInput: FC<CategoryInputProps> = ({
   title,
   categoryValues,
-  setCategoryValues,
+  actions,
 }) => {
   return (
     <div>
-      <label className="category-input-title">
-        {title}
-        {categoryValues.map((category, i) => {
-          return (
-            <div key={i}>
-              <input className="category-input"></input>
+      <div className="label__non-click">{title}</div>
+
+      {categoryValues.map((category, i) => {
+        return (
+          <div key={i} className="category__field">
+            <input
+              className="category-input"
+              name={category.name}
+              value={category.value}
+              onChange={(e) => actions.editField(e.target.name, e.target.value)}
+            />
+            <div onClick={() => actions.deleteField(category.name)}>
               <DeleteCategory />
             </div>
-          );
-        })}
-        {/* <input className="category-input"></input>
-        <DeleteCategory /> */}
-      </label>
+          </div>
+        );
+      })}
     </div>
   );
 };
 
-export const QuantityInput: FC = () => {
+export const QuantityInput: FC<QuantityInputProps> = ({
+  first,
+  second,
+  changeHandler,
+}) => {
   return (
     <div className="quantity-input-item">
       <div>
         <label>
           <span className="quantity-input-title">Кол-во</span>
           <div>
-            <input className="quantity-input"></input>
+            <input
+              className="quantity-input"
+              name="count"
+              value={first.value}
+              onChange={changeHandler}
+            />
             <span className="text">шт.</span>
           </div>
         </label>
@@ -83,7 +111,12 @@ export const QuantityInput: FC = () => {
         <label>
           <span className="quantity-input-title">Цена</span>
           <div>
-            <input className="quantity-input"></input>
+            <input
+              className="quantity-input"
+              name="price"
+              value={second.value}
+              onChange={changeHandler}
+            />
             <span className="text">₽</span>
           </div>
         </label>

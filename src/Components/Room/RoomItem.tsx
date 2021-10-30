@@ -60,7 +60,7 @@ const RoomItem: FC<RoomItemProps> = ({ room }) => {
             <div className="room__description-owner">Ваша комната</div>
           )}
         </div>
-        {room.amount && (
+        {room.amount !== 0 && (
           <div
             className={
               room.amount > 0 ? "room__amount_red" : "room__amount_green"

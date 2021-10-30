@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useCustomFormState from "../../hooks/useCustomFormState";
 import { useFormState } from "../../hooks/useFormState";
 import store from "../../store";
 import { RoomTabEnum } from "../../types/room";
@@ -15,7 +16,11 @@ const RoomSetting = () => {
 
   const [textareaValue, setTextareaValue] = useState("");
 
-  const [categoryValues, setCategoryValues] = useState([""]);
+  const [categoryValues, actions] = useCustomFormState(
+    store.product.categoryFields.length
+      ? store.product.categoryFields
+      : [{ name: "start", value: "" }]
+  );
 
   const submitHandler = () => {
     console.log(formValues);
@@ -31,6 +36,15 @@ const RoomSetting = () => {
         amount: 0,
       });
       store.room.setCurrentRoomTab(RoomTabEnum.product_list);
+      categoryValues.forEach((category) => {
+        if (category.value.trim().length) {
+          store.product.createCategory({
+            id: category.name,
+            title: category.value,
+            products: [],
+          });
+        }
+      });
     } else {
       alert("Заполните все поля");
     }
@@ -54,9 +68,14 @@ const RoomSetting = () => {
           <CategoryInput
             title="Категории"
             categoryValues={categoryValues}
-            setCategoryValues={setCategoryValues}
+            actions={actions}
           />
-          <button className="text-button">Добавить категорию</button>
+          <button
+            className="text-button"
+            onClick={() => actions.addField(Date.now().toString())}
+          >
+            Добавить категорию
+          </button>
         </Container>
       </Content>
       <SingleButton name="Далее" onClick={() => submitHandler()} />

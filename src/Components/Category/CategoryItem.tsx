@@ -1,4 +1,5 @@
 import { FC } from "react";
+import store from "../../store";
 import { ICategory } from "../../types/category";
 import ProductList from "../Product/ProductList";
 import "./CategoryItem.scss";
@@ -8,14 +9,19 @@ interface CategoryItemProps {
 }
 
 const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
-  const products = category.products;
-  return(
+  const foundAmount = store.product.categoryAmounts.categoryAmounts.find(
+    (categoryAmount) => categoryAmount.id === category.id
+  );
+
+  return (
     <div className="category">
-        <div className="category__title">{category.title}</div>
-        <div className="category__body">
-            <ProductList products={products}/>
-        </div>
-        <div className="category__final-amount">{category.final_amount} ₽</div>
+      <div className="category__title">{category.title}</div>
+      <div className="category__body">
+        <ProductList products={category.products} />
+      </div>
+      <div className="category__final-amount">
+        {foundAmount?.categoryAmount || 0} ₽
+      </div>
     </div>
   );
 };
