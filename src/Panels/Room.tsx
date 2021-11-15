@@ -5,7 +5,7 @@ import RoomTab from "../Components/Room/RoomTab";
 import RoomProducts from "../Components/Room/RoomProducts";
 import RoomSetting from "../Components/Room/RoomSetting";
 import store from "../store";
-import { RoomTabEnum } from "../types/room";
+import { RoomEditTabEnum } from "../types/room";
 import Panel from "../Components/Generic/Panel";
 import { CurrentPanelEnum } from "../types/app";
 
@@ -14,9 +14,9 @@ const Room = observer(() => {
 
   const getCurrentTabComponent = () => {
     switch (currentRoomTab) {
-      case RoomTabEnum.setting:
+      case RoomEditTabEnum.setting:
         return <RoomSetting />;
-      case RoomTabEnum.product_list:
+      case RoomEditTabEnum.product_list:
         return <RoomProducts />;
     }
   };

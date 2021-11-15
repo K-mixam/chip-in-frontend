@@ -198,3 +198,25 @@ export const DeleteCategory = () => {
     </svg>
   );
 };
+
+export const TagUlTriangle = () => {
+  return(
+    <svg 
+      width="7" 
+      height="6" 
+      viewBox="0 0 7 6" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.5 6L0.468912 0.749999L6.53109 0.75L3.5 6Z" fill="white"/>
+    </svg>
+  );
+};
+
+export const CopyLink = () => {
+  return(
+<svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="39" height="39" rx="19.5" fill="#D4204B"/>
+<path d="M24 8.31836H12C10.9 8.31836 10 9.20922 10 10.298V24.1559H12V10.298H24V8.31836ZM27 12.2777H16C14.9 12.2777 14 13.1686 14 14.2574V28.1152C14 29.2041 14.9 30.0949 16 30.0949H27C28.1 30.0949 29 29.2041 29 28.1152V14.2574C29 13.1686 28.1 12.2777 27 12.2777ZM27 28.1152H16V14.2574H27V28.1152Z" fill="white"/>
+</svg>
+  );
+};

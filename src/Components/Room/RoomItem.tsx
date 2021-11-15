@@ -2,7 +2,7 @@ import { FC } from "react";
 import { TickIcon } from "../../assets/svg";
 import store from "../../store";
 import { CurrentPanelEnum } from "../../types/app";
-import { IRoom, RoomTabEnum } from "../../types/room";
+import { IRoom, RoomEditTabEnum } from "../../types/room";
 import "./RoomItem.scss";
 
 interface RoomItemProps {
@@ -39,7 +39,7 @@ const RoomItem: FC<RoomItemProps> = ({ room }) => {
       className="room"
       onClick={() => {
         store.app.setCurrentPanel(CurrentPanelEnum.room);
-        store.room.setCurrentRoomTab(RoomTabEnum.product_list);
+        store.room.setCurrentRoomTab(RoomEditTabEnum.product_list);
       }}
     >
       <div className="room__name">

@@ -1,0 +1,45 @@
+.tracking {
+  &__item {
+    border-bottom: 1px solid rgba($color: #161616, $alpha: 0.4);
+    list-style: none;
+  }
+  &__name {
+    margin-top: 8px;
+    margin-left: 12px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: "Golos";
+
+    position: relative;
+    padding-left: 15px;
+  }
+
+  &__name::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-color: transparent transparent transparent #ffffff;
+  }
+  &__description {
+    font-size: 16px;
+    line-height: 19px;
+    font-family: "Golos";
+    list-style: none;
+
+    &__element {
+      margin-left: 8px;
+      margin-bottom: 6px;
+      margin-top: 6px;
+      font-weight: 400;
+      padding-right: 32px;
+    }
+  }
+}
+
+.operation {
+  color: #d4204b;
+}

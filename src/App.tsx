@@ -8,6 +8,7 @@ import Room from "./Panels/Room";
 import ProductSetup from "./Panels/ProductSetup";
 import bridge from "@vkontakte/vk-bridge";
 import { observer } from "mobx-react-lite";
+import AdminPanel from "./Panels/AdminPanel";
 
 const App: FC = observer(() => {
   bridge.send("VKWebAppInit", {});
@@ -36,6 +37,8 @@ const App: FC = observer(() => {
         return <Room />;
       case CurrentPanelEnum.productSetup:
         return <ProductSetup />;
+      case CurrentPanelEnum.adminPanel:
+        return <AdminPanel/>;
     }
   };
 

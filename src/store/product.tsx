@@ -9,30 +9,30 @@ class Product {
       title: "Без категории",
       products: [],
     },
-    // {
-    //   id: "1",
-    //   title: "Еда",
-    //   products: [
-    //     {
-    //       id: 0,
-    //       title: "Шашлык",
-    //       count: 4,
-    //       price: 450,
-    //     },
-    //     {
-    //       id: 1,
-    //       title: "Овощи",
-    //       count: 4,
-    //       price: 100,
-    //     },
-    //     {
-    //       id: 2,
-    //       title: "Хлеб",
-    //       count: 2,
-    //       price: 30,
-    //     },
-    //   ],
-    // },
+    {
+      id: "1",
+      title: "Еда",
+      products: [
+        {
+          id: 0,
+          title: "Шашлык",
+          count: 4,
+          price: 450,
+        },
+        {
+          id: 1,
+          title: "Овощи",
+          count: 4,
+          price: 100,
+        },
+        {
+          id: 2,
+          title: "Хлеб",
+          count: 2,
+          price: 30,
+        },
+      ],
+    },
     // {
     //   id: "2",
     //   title: "Напитки",

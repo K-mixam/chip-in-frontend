@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { FC } from "react";
 import store from "../../store";
-import { RoomTabEnum } from "../../types/room";
+import { RoomEditTabEnum } from "../../types/room";
 import "./RoomTab.scss";
 
 interface RoomTabProps {
@@ -19,7 +19,7 @@ const RoomTab: FC<RoomTabProps> = observer(
   ({ firstTabName, secondTabName }) => {
     const { currentRoomTab } = store.room;
 
-    const getTabClass = (roomTab: RoomTabEnum) => {
+    const getTabClass = (roomTab: RoomEditTabEnum) => {
       return currentRoomTab === roomTab
         ? "switch-button__item_selected"
         : "switch-button__item";
@@ -29,14 +29,14 @@ const RoomTab: FC<RoomTabProps> = observer(
       <div className="switch-button">
         <RoomTabItem
           name={firstTabName}
-          className={getTabClass(RoomTabEnum.setting)}
-          clickHandler={() => store.room.setCurrentRoomTab(RoomTabEnum.setting)}
+          className={getTabClass(RoomEditTabEnum.setting)}
+          clickHandler={() => store.room.setCurrentRoomTab(RoomEditTabEnum.setting)}
         />
         <RoomTabItem
           name={secondTabName}
-          className={getTabClass(RoomTabEnum.product_list)}
+          className={getTabClass(RoomEditTabEnum.product_list)}
           clickHandler={() =>
-            store.room.setCurrentRoomTab(RoomTabEnum.product_list)
+            store.room.setCurrentRoomTab(RoomEditTabEnum.product_list)
           }
         />
       </div>

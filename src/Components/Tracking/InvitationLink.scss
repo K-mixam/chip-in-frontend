@@ -1,0 +1,38 @@
+.invitation-link {
+  padding-left: 14px;
+  padding-right: 14px;
+  margin-bottom: 20px;
+  &__title {
+    margin-left: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  &__body {
+    margin-top: 8px;
+  }
+  &__link-place {
+    width: 100%;
+    height: 39px;
+    background: #34373c;
+    border-radius: 20px;
+    text-align: center;
+    padding-top: 8;
+    position: relative;
+    &__link-text {
+      position: absolute;
+      font-size: 20px;
+      color: #dcddde;
+      left: 16px;
+      top: 7px;
+    }
+  }
+}
+
+.copy-link-btn {
+  position: absolute;
+  border: 0;
+  background-color: transparent;
+  right: -6px;
+  top: -1px;
+}

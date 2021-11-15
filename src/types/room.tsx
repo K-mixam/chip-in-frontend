@@ -7,7 +7,12 @@ export interface IRoom {
   amount: number;
 }
 
-export enum RoomTabEnum {
+export enum RoomEditTabEnum {
   setting = "setting",
   product_list = "product_list",
+}
+
+export enum RoomAdminTabEnum{
+  guests_tracking = "guests_tracking",
+  product_tracking = "product_tracking",
 }

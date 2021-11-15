@@ -2,7 +2,7 @@ import { useState } from "react";
 import useCustomFormState from "../../hooks/useCustomFormState";
 import { useFormState } from "../../hooks/useFormState";
 import store from "../../store";
-import { RoomTabEnum } from "../../types/room";
+import { RoomEditTabEnum } from "../../types/room";
 import Container from "../Generic/Container";
 import Content from "../Generic/Content";
 import { CategoryInput, Input, Textarea } from "../Generic/MyInput";
@@ -35,7 +35,7 @@ const RoomSetting = () => {
         owner: store.user.user.id,
         amount: 0,
       });
-      store.room.setCurrentRoomTab(RoomTabEnum.product_list);
+      store.room.setCurrentRoomTab(RoomEditTabEnum.product_list);
       categoryValues.forEach((category) => {
         if (category.value.trim().length) {
           store.product.createCategory({

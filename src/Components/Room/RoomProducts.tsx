@@ -9,7 +9,7 @@ const RoomProducts = () => {
     <>
       <Content>
         <Container>
-          <CategoryList />
+          <CategoryList/>
         </Container>
       </Content>
       <TotalAmount />

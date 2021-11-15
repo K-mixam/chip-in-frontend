@@ -8,7 +8,7 @@ interface CategoryItemProps {
   category: ICategory;
 }
 
-const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
+const CategoryItem: FC<CategoryItemProps> = ({ category}) => {
   const foundAmount = store.product.categoryAmounts.categoryAmounts.find(
     (categoryAmount) => categoryAmount.id === category.id
   );
@@ -17,7 +17,7 @@ const CategoryItem: FC<CategoryItemProps> = ({ category }) => {
     <div className="category">
       <div className="category__title">{category.title}</div>
       <div className="category__body">
-        <ProductList products={category.products} />
+      <ProductList products={category.products} />
       </div>
       <div className="category__final-amount">
         {foundAmount?.categoryAmount || 0} ₽

@@ -11,7 +11,7 @@ import Content from "../Components/Generic/Content";
 import Panel from "../Components/Generic/Panel";
 import store from "../store";
 import { CurrentPanelEnum } from "../types/app";
-import { RoomTabEnum } from "../types/room";
+import { RoomEditTabEnum } from "../types/room";
 
 const Home: FC = () => {
   return (
@@ -33,7 +33,7 @@ const Home: FC = () => {
         name="Создать комнату"
         onClick={() => {
           store.app.setCurrentPanel(CurrentPanelEnum.room);
-          store.room.setCurrentRoomTab(RoomTabEnum.setting);
+          store.room.setCurrentRoomTab(RoomEditTabEnum.setting);
         }}
       />
     </Panel>

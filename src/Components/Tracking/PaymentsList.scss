@@ -1,0 +1,17 @@
+.paymentsList-item {
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+
+  &__debt-product {
+  }
+
+  &__money {
+  }
+
+  &__done {
+    color: #a4a4a4;
+  }
+}

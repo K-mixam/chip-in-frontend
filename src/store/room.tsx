@@ -1,9 +1,10 @@
 import { makeAutoObservable } from "mobx";
-import { IRoom, RoomTabEnum } from "../types/room";
+import { IRoom, RoomAdminTabEnum, RoomEditTabEnum } from "../types/room";
 
 class Room {
   is_filtered_owner = false;
-  currentRoomTab = RoomTabEnum.setting;
+  currentRoomTab = RoomEditTabEnum.setting;
+  currentAdminPanelTab = RoomAdminTabEnum.product_tracking;
   rooms: IRoom[] = [
     // {
     //   id: 0,
@@ -65,7 +66,7 @@ class Room {
     this.is_filtered_owner = !this.is_filtered_owner;
   }
 
-  setCurrentRoomTab(roomTab: RoomTabEnum) {
+  setCurrentRoomTab(roomTab: RoomEditTabEnum) {
     this.currentRoomTab = roomTab;
   }
 }

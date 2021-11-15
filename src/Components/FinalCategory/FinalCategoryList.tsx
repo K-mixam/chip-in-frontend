@@ -1,16 +1,20 @@
 import store from "../../store";
-import CategoryItem from "./CategoryItem";
+import FinalCategoryItem from "./FinalCategoryItem";
 import { FC } from "react";
 import Container from "../Generic/Container";
 
-const CategoryList:FC = () => {
+interface FinalCategoryListProps{
+  type: string;
+}
+
+const FinalCategoryList:FC<FinalCategoryListProps> = ({ type }) => {
   const categories = store.product.categories;
 
   return (
     <Container>
       {categories.map((category) => {
         return category.products.length ? (
-          <CategoryItem category={category} key={category.id}/>
+          <FinalCategoryItem category={category} key={category.id} type={type}/>
         ) : null;
       })}
     </Container>
@@ -18,4 +22,4 @@ const CategoryList:FC = () => {
 };
 
 
-export default CategoryList;
+export default FinalCategoryList;
