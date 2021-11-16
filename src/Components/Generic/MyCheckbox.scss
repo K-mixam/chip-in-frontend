@@ -1,0 +1,28 @@
+.my-checkbox {
+  display: none;
+}
+
+.check-mark {
+  display: block;
+  position: relative;
+  width: 26px;
+  height: 26px;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+.check-mark::before {
+  content: "";
+  position: absolute;
+  display: block;
+
+  width: 26px;
+  height: 26px;
+
+  background-image: url("../../assets/png/CheckMark.png");
+  opacity: 0;
+}
+
+.my-checkbox:checked + .check-mark::before {
+  opacity: 1;
+}

@@ -12,7 +12,7 @@ const GuestsTracking:FC = () => {
         <>
             <Content>
                 <InvitationLink/>
-                <AllDonationsBar/>
+                <AllDonationsBar title="Собрано средств"/>
                 <FinalCategoryList type="guests-tracking" />
             </Content>
             <SingleButton name="Назад"/>

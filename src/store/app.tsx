@@ -2,7 +2,7 @@ import { makeAutoObservable } from "mobx";
 import { CurrentPanelEnum } from "../types/app";
 
 class App {
-  currentPanel = CurrentPanelEnum.adminPanel;
+  currentPanel = CurrentPanelEnum.guestPanel;
 
   constructor() {
     makeAutoObservable(this);

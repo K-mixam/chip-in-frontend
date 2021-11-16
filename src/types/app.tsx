@@ -3,4 +3,5 @@ export enum CurrentPanelEnum {
   room = "room",
   productSetup = "productSetup",
   adminPanel = "adminPanel",
+  guestPanel = "guestPanel",
 }

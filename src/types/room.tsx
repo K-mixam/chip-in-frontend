@@ -16,3 +16,8 @@ export enum RoomAdminTabEnum{
   guests_tracking = "guests_tracking",
   product_tracking = "product_tracking",
 }
+
+export enum RoomGuestTabEnum{
+  product_select = "product_select",
+  report = "report"
+}

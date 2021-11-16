@@ -3,7 +3,18 @@
     border-bottom: 1px solid rgba($color: #161616, $alpha: 0.4);
     list-style: none;
   }
+
   &__name {
+    display: flex;
+    position: relative;
+
+    &__checkbox {
+      position: absolute;
+      margin-left: 215px;
+    }
+  }
+
+  &__head {
     margin-top: 8px;
     margin-left: 12px;
     font-weight: 500;
@@ -15,11 +26,11 @@
     padding-left: 15px;
   }
 
-  &__name::before {
+  &__head::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 10%;
+    top: 7px;
     border-style: solid;
     border-width: 5px 0 5px 5px;
     border-color: transparent transparent transparent #ffffff;
@@ -36,6 +47,20 @@
       margin-top: 6px;
       font-weight: 400;
       padding-right: 32px;
+    }
+
+    &__product-select {
+      font-size: 11px;
+      display: flex;
+      position: relative;
+
+      &__left {
+      }
+
+      &__right {
+        position: absolute;
+        margin-left: 114px;
+      }
     }
   }
 }

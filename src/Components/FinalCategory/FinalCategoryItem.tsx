@@ -11,7 +11,7 @@ interface FinalCategoryItemProps {
 const FinalCategoryItem: FC<FinalCategoryItemProps> = ({ category, type }) => {
     const lastCategoryItem = () => {
       switch(type){
-        case "category-tracking":
+        case "category-tracking" || "product-select":
           return null;
         case "guests-tracking":
           return (
@@ -26,10 +26,16 @@ const FinalCategoryItem: FC<FinalCategoryItemProps> = ({ category, type }) => {
           return (
             <div className="category__title">{category.title}</div>
           );
+        case "product-select":
+          return (
+            <div className="category__title">{category.title}</div>
+          );
         case "guests-tracking":
           return(
             <div className="category__title">Гости</div>
           );
+        case "chipin-data":
+          return <div className="category__title">Выбранные товары</div>
       }
     }
 
